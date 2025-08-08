@@ -3,6 +3,7 @@
 This project provides a no-code platform for building and orchestrating multi-agent AI systems using Amazon Bedrock, CrewAI and foundation models like Claude 3 Haiku and Stability AI's Stable Image Ultra V1. The Multi-Agent Builder enables users to visually create, configure, and deploy specialized AI agents that collaborate to solve complex tasks - without writing a single line of code. By leveraging foundation models through a user-friendly interface, even non-technical users can harness the power of multi-agent workflows for content creation, code generation, image generation, and creative design tasks.
 
 **Key Features:**
+
 - **Multi-Agent Collaboration**: Agents with different roles work together to accomplish complex tasks
 - **Amazon Bedrock Integration**: Leverages Amazon's foundation models for advanced AI capabilities including text generation with Claude 3 Haiku and image generation with Stability AI's Stable Image Ultra
 - **CrewAI Framework**: Orchestrates agent interactions and workflow management
@@ -18,12 +19,11 @@ This project provides a no-code platform for building and orchestrating multi-ag
 2. **Game Code Generation**: Multi-step game development process from design prompt to functional code
 3. **NPC Character Creation**: Game character development with specialized agents for character design, dialogue, attributes, and AI-generated visual representation using Stability AI's Stable Image Ultra.
 
-
 ## Architecture
 
 ![Multi-Agent Architecture](assets/architecture.png)
 
-1. Users interact with a React-based web interface to create, configure, and monitor agent missions. The UI allows no-code creation of agents with specific roles, goals, and capabilities. 
+1. Users interact with a React-based web interface to create, configure, and monitor agent missions. The UI allows no-code creation of agents with specific roles, goals, and capabilities.
 2. RESTful APIs handle communication between the UI and backend services. AWS Lambda functions process CRUD operations for agents, missions, and tasks. Amazon API Gateway manages request routing and authentication.
 3. CrewAI framework coordinates agent interactions and workflow management. Agents are assigned specific roles, goals, and tools based on mission requirements. The system supports both sequential and hierarchical agent collaboration models. This app is dockerized and deployed in AWS Fargate.
 4. Amazon Bedrock provides access to foundation models: Claude 3 Haiku for text generation and reasoning, and Stability AI's Stable Image Ultra for image generation. Specialized agents can access tools like code interpreters and image generators to create visual assets directly from text descriptions
@@ -31,6 +31,7 @@ This project provides a no-code platform for building and orchestrating multi-ag
 ## Prerequisites
 
 1. Have the following installed:
+
 - [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) version >= 2.1005.0
 - [Node.js](https://nodejs.org/en) >= 16.x
 - [npm](https://www.npmjs.com/get-npm) >= 8.x
@@ -87,7 +88,7 @@ This project provides a no-code platform for building and orchestrating multi-ag
 
 ### 3. Project Deployment
 
-1. Bootstrap your AWS environment if not already done. You will need to complete this step if it is your first time deploying a CDK project in your account:
+1. Bootstrap your AWS environment if not already done (make sure you're at the root). You will need to complete this step if it is your first time deploying a CDK project in your account:
 
    ```bash
    cdk bootstrap
@@ -102,7 +103,7 @@ This project provides a no-code platform for building and orchestrating multi-ag
 
 3. (No action required here, fyi) You will see a new CloudFormation Stack called `MultiAgentToolchainStack` created in your AWS Account. Once it is successfully created, it provisions a CodePipeline called `MultiAgentProjectPipeline` which will deploy the infrastructure including backend APIs and UI. When the pipeline completes, you can find these resources in a newly created CloudFormation Stack called `Deploy-MultiAgentProjectStack`.
 
-4. To view the application, visit the `Deploy-MultiAgentProjectStack` Stack in the AWS CloudFormation Console one it is completed (~15 mins), select the Outputs Tab and click on the link generated with name `UIUrl`. 
+4. To view the application, visit the `Deploy-MultiAgentProjectStack` Stack in the AWS CloudFormation Console one it is completed (~15 mins), select the Outputs Tab and click on the link generated with name `UIUrl`.
 
 ## (optional) Local Development
 
@@ -136,11 +137,11 @@ The API will be available at `http://127.0.0.1:8000/`
 
 To test the application in a containerized environment:
 
-   ```bash
-   # Using Docker directly
-   docker build -t multi-agent:1 .
-   docker run -p 8000:8000 multi-agent:1
-   ```
+```bash
+# Using Docker directly
+docker build -t multi-agent:1 .
+docker run -p 8000:8000 multi-agent:1
+```
 
 This will build and run the container locally, making the API available at `http://localhost:8000/`
 
@@ -152,7 +153,6 @@ This will build and run the container locally, making the API available at `http
 - `/ui` - React frontend application
 - `/infrastructure` - AWS CDK infrastructure code
 
-
 ## Cleanup
 
 To remove all deployed resources from your AWS account:
@@ -163,7 +163,7 @@ To remove all deployed resources from your AWS account:
    cdk destroy
    ```
 
-2. Manually delete the `Deploy-MultiAgentProjectStack` from the CloudFormation console. 
+2. Manually delete the `Deploy-MultiAgentProjectStack` from the CloudFormation console.
 3. Empty and delete the S3 bucket that starts with `multiagenttoolchainstack-`
 
 ## FAQ
@@ -193,4 +193,3 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
-
