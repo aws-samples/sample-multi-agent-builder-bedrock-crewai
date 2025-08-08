@@ -88,7 +88,7 @@ This project provides a no-code platform for building and orchestrating multi-ag
 
 ### 3. Project Deployment
 
-1. Bootstrap your AWS environment if not already done (make sure you're at the root). You will need to complete this step if it is your first time deploying a CDK project in your account:
+1. Bootstrap your AWS environment if not already done (make sure you're at the root of the project). You will need to complete this step if it is your first time deploying a CDK project in your account:
 
    ```bash
    cdk bootstrap
