@@ -177,7 +177,9 @@ export class MultiAgentToolchainStack extends cdk.Stack {
           effect: iam.Effect.ALLOW,
           actions: ['ssm:GetParameter'],
           resources: [
-            `arn:aws:ssm:${this.region}:${this.account}:parameter/multi-agent/*`
+            `arn:aws:ssm:${this.region}:${this.account}:parameter/multi-agent/*`,
+            `arn:aws:ssm:${this.region}:${this.account}:parameter/api/endpoint`,
+            `arn:aws:ssm:${this.region}:${this.account}:parameter/agent-api/endpoint`
           ],
         }),
         new iam.PolicyStatement({
