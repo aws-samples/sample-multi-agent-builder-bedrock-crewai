@@ -12,8 +12,7 @@ This project provides a no-code platform for building and orchestrating multi-ag
 
 ## Demo & Ready-Examples
 
-[<img src=[https://github.com/user-attachments/assets/2e972a60-37d7-49d4-adbc-43ab6c411276] width="200" />
-](https://github.com/user-attachments/assets/2e972a60-37d7-49d4-adbc-43ab6c411276)
+https://github.com/user-attachments/assets/eeeeb56e-aa1f-4910-a91b-c267453ea8a1
 
 1. **Newsletter Creation**: Collaborative content generation with specialized agents for event ideas, copywriting, and marketing
 2. **Game Code Generation**: Multi-step game development process from design prompt to functional code
