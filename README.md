@@ -24,10 +24,10 @@ https://github.com/user-attachments/assets/eeeeb56e-aa1f-4910-a91b-c267453ea8a1
   <img src="assets/architecture.png" alt="Multi-Agent Architecture" />
 </div>
 
-1. Users interact with a React-based web interface to create, configure, and monitor agent missions. The UI allows no-code creation of agents with specific roles, goals, and capabilities.
-2. RESTful APIs handle communication between the UI and backend services. AWS Lambda functions process CRUD operations for agents, missions, and tasks. Amazon API Gateway manages request routing and authentication.
-3. CrewAI framework coordinates agent interactions and workflow management. Agents are assigned specific roles, goals, and tools based on mission requirements. The system supports both sequential and hierarchical agent collaboration models. This app is dockerized and deployed in AWS Fargate.
-4. Amazon Bedrock provides access to foundation models: Claude 3 Haiku for text generation and reasoning, and Stability AI's Stable Image Ultra for image generation. Specialized agents can access tools like code interpreters and image generators to create visual assets directly from text descriptions
+1. Users interact with a React-based web interface hosted on Amazon S3 and distributed via Amazon CloudFront. The UI provides no-code creation and management of agents, missions, and tasks.
+2. Amazon API Gateway routes requests to AWS Lambda functions that handle CRUD operations for agents, missions, and tasks stored in Amazon DynamoDB tables.
+3. When users execute missions, requests are routed through CloudFront to a CrewAI application running on AWS Fargate. This containerized service orchestrates multi-agent workflows and coordinates agent interactions.
+4. The Fargate-hosted CrewAI application connects to Amazon Bedrock to access foundation models: Claude 3 Haiku for text generation and reasoning, and Stability AI's Stable Image Ultra for image generation. Agents use specialized tools for code interpretation and image generation to complete complex tasks.
 
 ## Prerequisites
 
