@@ -171,11 +171,16 @@ docker run -p 8000:8000 multi-agent:1
 ## 📁 Project Structure
 
 ```
-├── 🤖 agents-api/          # Backend API code
+├── 🤖 agents-api/          # CrewAI backend service
 │   ├── 🛠️ tools/           # Custom agent tools (image gen, code interpreter)
-│   └── 📄 main.py          # FastAPI application & CrewAI orchestration
+│   ├── 📄 main.py          # FastAPI application & CrewAI orchestration
+│   ├── 🐳 Dockerfile       # Container configuration
+│   └── 📦 pyproject.toml   # Python dependencies
 ├── 🎨 ui/                  # React frontend application
-└── 🏗️ infrastructure/      # AWS CDK infrastructure code
+├── 🏗️ lib/                 # AWS CDK infrastructure code
+├── ⚡ lambdas/             # AWS Lambda functions
+├── 🔧 bin/                 # CDK app entry point
+└── 📋 cdk.json             # CDK configuration
 ```
 
 ---
