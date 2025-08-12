@@ -20,7 +20,9 @@ https://github.com/user-attachments/assets/eeeeb56e-aa1f-4910-a91b-c267453ea8a1
 
 ## Architecture
 
-![Multi-Agent Architecture](assets/architecture.png)
+<div align="center">
+  <img src="assets/architecture.png" alt="Multi-Agent Architecture" />
+</div>
 
 1. Users interact with a React-based web interface to create, configure, and monitor agent missions. The UI allows no-code creation of agents with specific roles, goals, and capabilities.
 2. RESTful APIs handle communication between the UI and backend services. AWS Lambda functions process CRUD operations for agents, missions, and tasks. Amazon API Gateway manages request routing and authentication.
