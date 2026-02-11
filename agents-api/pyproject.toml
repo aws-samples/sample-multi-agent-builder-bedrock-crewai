@@ -12,7 +12,7 @@ python-dotenv = "1.0.0"
 fastapi = {version = "0.115.2", extras = ["all"]}  # Latest version with all security features
 uvicorn = {version = "0.27.1", extras = ["standard"]}  # Latest stable version
 crewai-tools = "0.13.4"
-pillow = "10.4.0"
+pillow = "12.1.1"
 langchain = "0.3.6"
 langchain-aws = "0.2.6"
 aiohttp = "3.10.11"
